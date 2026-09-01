@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Khula-Nathi - Contact Us</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            margin-right: 25px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .contact-section {
+            width: 500px;
+            max-width: 90%;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .contact-section h1 {
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            margin-bottom: 25px;
+        }
+
+        .contact-form {
+            text-align: left;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            display: block;
+            margin: 10px auto;
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="homepage.html">Home</a>
+        <a href="abouUs.html">About Us</a>
+        <a href="getinvolved.html">Get Involved</a>
+        <a href="contactpage.html">Contact Us</a>
+    </nav>
+
+    <hr>
+
+    <!-- CONTACT US -->
+    <main>
+
+        <section class="contact-section">
+
+            <h1>Contact Us</h1>
+
+            <p>
+                We would love to hear from you.
+                Please fill in your information below to get in touch with Khula-Nathi.
+            </p>
+
+            <form class="contact-form">
+
+                <label for="fullname">Full Name</label>
+                <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                >
+
+                <label for="message">Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Enter your message here..."
+                    required
+                ></textarea>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>Contact Us: 012 345 6789</p>
+
+        <p>
+            <a href="mailto:Khula-Nathi@gmail.com">
+                Khula-Nathi@gmail.com
+            </a>
+        </p>
+
+    </footer>
+
+</body>
+</html>
