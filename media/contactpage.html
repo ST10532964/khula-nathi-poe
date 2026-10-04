@@ -3,124 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Khula-Nathi - Contact Us</title>
 
-    <style>
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        nav a {
-            margin-right: 25px;
-            font-size: 18px;
-            text-decoration: none;
-        }
-
-        .contact-section {
-            width: 500px;
-            max-width: 90%;
-            margin: 40px auto;
-            text-align: center;
-        }
-
-        .contact-section h1 {
-            margin-bottom: 10px;
-        }
-
-        .contact-section p {
-            margin-bottom: 25px;
-        }
-
-        .contact-form {
-            text-align: left;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 7px;
-            font-weight: bold;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-
-        .contact-form textarea {
-            height: 130px;
-            resize: vertical;
-        }
-
-        .contact-form button {
-            display: block;
-            margin: 10px auto;
-            padding: 12px 30px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-    </style>
+    <!-- Links to external CSS -->
+    <link rel="stylesheet" href="../CSS/khula-nathi.css">
 </head>
-
 <body>
 
-    <!-- navigation bar -->
-    <nav>
-        <a><a></a><a href="homepage.html">Home</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="abouUs.html">About Us</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="gallery.html">Gallery</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="getinvolved.html">Get Involved</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="contactpage.html">Contact us</a>
-    </nav>
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="brand-logo">KHULA-NATHI</div>
+            <nav class="nav-links">
+                <a href="homepage.html">Home</a>
+                <a href="abouUs.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="getinvolved.html">Get Involved</a>
+                <a href="contactpage.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-    <hr>
+    <!-- Contact Form Container -->
+    <main class="contact-section">
+        <h1>Contact Us</h1>
+        <p class="contact-subtitle">
+            We would love to hear from you. Please fill in your information below to get in touch with Khula-Nathi and let us know how you would like to help.
+        </p>
 
-    <!--contact us ssection -->
-    <main>
+        <!-- Instruction Alert Banner -->
+        <div class="form-instruction-banner">
+            <strong>Note:</strong> Please ensure that <strong>every field</strong> is correctly filled in before submitting your message.
+        </div>
 
-        <section class="contact-section">
+        <!-- Success Message Popup (Hidden by Default) -->
+        <div id="successMessage" class="success-alert" style="display: none;">
+            ✅ Saved successfully! Thank you for contacting Khula-Nathi.
+        </div>
 
-            <h1>Contact Us</h1>
-
-            <p>
-                We would love to hear from you.
-                Please fill in your information below to get in touch with Khula-Nathi and let us know how you would like to help
-            </p>
-
-            <form class="contact-form">
-
-                <label for="fullname">Full Name</label>
+        <form id="contactForm" class="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+                <label for="fullname">Full Name *</label>
                 <input
                     type="text"
                     id="fullname"
                     name="fullname"
                     placeholder="Enter your full name"
+                    pattern="[A-Za-z\s]{2,}"
+                    title="Please enter a valid full name (letters and spaces only)."
                     required
                 >
+            </div>
 
-                <label for="email">Email Address</label>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
                 <input
                     type="email"
                     id="email"
@@ -128,43 +64,65 @@
                     placeholder="Enter your email address"
                     required
                 >
+            </div>
 
-                <label for="phone">Phone Number</label>
+            <div class="form-group">
+                <label for="phone">Phone Number (10 Digits) *</label>
                 <input
                     type="tel"
                     id="phone"
                     name="phone"
-                    placeholder="Enter your phone number"
+                    placeholder="e.g. 0123456789"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    title="Phone number must consist of exactly 10 numeric digits."
+                    required
                 >
+            </div>
 
-                <label for="message">Message</label>
+            <div class="form-group">
+                <label for="message">Message *</label>
                 <textarea
                     id="message"
                     name="message"
                     placeholder="Enter your message here..."
                     required
                 ></textarea>
+            </div>
 
-                <button type="submit">Send Message</button>
-
-            </form>
-
-        </section>
-
+            <button type="submit" class="send-btn">Send Message</button>
+        </form>
     </main>
 
-    <!-- footer for contact information -->
-    <footer>
-
+    <!-- Footer Section -->
+    <footer class="site-footer">
         <p>Contact Us: 012 345 6789</p>
-
-        <p>
-            <a href="mailto:Khula-Nathi@gmail.com">
-                Khula-Nathi@gmail.com
-            </a>
-        </p>
-
+        <p><a href="mailto:Khula-Nathi@gmail.com">Khula-Nathi@gmail.com</a></p>
     </footer>
+
+    <!-- Form Validation Script -->
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevents page reload
+            
+            const form = document.getElementById('contactForm');
+            const successAlert = document.getElementById('successMessage');
+
+            // Show "Saved successfully!" message
+            successAlert.style.display = 'block';
+
+            // Scroll smoothly to success alert
+            successAlert.scrollIntoView({ behavior: 'smooth' });
+
+            // Reset input fields after submission
+            form.reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successAlert.style.display = 'none';
+            }, 5000);
+        }
+    </script>
 
 </body>
 </html>

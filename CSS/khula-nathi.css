@@ -259,3 +259,209 @@ a {
 .site-footer a:hover {
   text-decoration: underline;
 }
+
+/* ==========================================================================
+   CONTACT FORM STYLES (Matching Image 2 Layout)
+   ========================================================================== */
+.contact-section {
+  max-width: 550px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 0.75rem;
+}
+
+.contact-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: #000000;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  font-family: Arial, sans-serif;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888888;
+}
+
+.send-btn {
+  display: block;
+  margin: 2rem auto 0 auto;
+  padding: 10px 28px;
+  font-size: 1rem;
+  color: #000000;
+  background-color: #EFEFEF;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.send-btn:hover {
+  background-color: #E2E2E2;
+}
+/* ==========================================================================
+   GET INVOLVED PAGE STYLES
+   ========================================================================== */
+
+/* Main Container Wrapper */
+.get-involved-wrapper {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Horizontal Flexbox Layout for Circle Gallery */
+.join-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+/* Individual Circle Card */
+.join-item {
+  text-align: center;
+  width: 210px;
+}
+
+/* Green Highlighted Circular Frames */
+.circle-frame {
+  display: block;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 6px;
+  background-color: #FFFFFF;
+  border: 4px solid #2F6B3F;      /* Dark green primary border */
+  outline: 2px solid #5C8D4E;     /* Medium green accent highlight */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.circle-frame:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: #5C8D4E;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.circle-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;               /* Ensures images crop nicely into exact circles */
+  border-radius: 50%;
+  display: block;
+}
+
+/* Item Headings */
+.join-item h2 {
+  font-size: 1.25rem;
+  color: #2F6B3F;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+/* Call to Action Card */
+.contact-card {
+  background-color: #F5F7F2;      /* Soft light green background */
+  border-left: 5px solid #2F6B3F;
+  border-radius: 8px;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card h2 {
+  font-size: 1.6rem;
+  color: #2F6B3F;
+  margin-bottom: 0.75rem;
+}
+
+.contact-card p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.contact-card a {
+  color: #2F6B3F;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.contact-card a:hover {
+  color: #5C8D4E;
+}
+
+/* Responsive adjustments for tablets and mobile devices */
+@media (max-width: 768px) {
+  .get-involved-wrapper {
+    margin: 1.5rem auto;
+  }
+
+  .join-gallery {
+    gap: 1.5rem;
+  }
+
+  .join-item {
+    width: 150px;
+  }
+
+  .circle-frame {
+    width: 130px;
+    height: 130px;
+    padding: 4px;
+  }
+
+  .join-item h2 {
+    font-size: 1.1rem;
+  }
+
+  .contact-card {
+    padding: 1.25rem;
+  }
+}

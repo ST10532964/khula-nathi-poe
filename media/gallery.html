@@ -1,112 +1,72 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khula-Nathi - Gallery</title>
-
-
-<style>
-    nav {
-        padding: 15px 0;
-    }
-
-    nav a {
-        margin-right: 25px;
-        font-size: 18px;
-        text-decoration: none;
-    }
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 400px);
-        justify-content: center;
-        gap: 25px;
-        margin: 30px auto;
-    }
-
-    .gallery img {
-        width: 400px;
-        height: 270px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-
-    footer {
-        margin-top: 30px;
-    }
-
-    @media (max-width: 850px) {
-        .gallery {
-            grid-template-columns: repeat(2, 1fr);
-            padding: 10px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: auto;
-        }
-    }
-</style>
-
-
+    <!-- Relative path from media/ folder to CSS/ folder -->
+    <link rel="stylesheet" href="../CSS/khula-nathi.css">
 </head>
-
 <body>
 
-<nav>
-  <a><a></a><a href="homepage.html">Home</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="abouUs.html">About Us</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="gallery.html">Gallery</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="getinvolved.html">Get Involved</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="contactpage.html">Contact us</a>
-</nav>
+    <!-- Top Navigation Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="brand-logo">KHULA-NATHI</div>
+            <nav class="nav-links">
+                <a href="homepage.html">Home</a>
+                <a href="abouUs.html">About</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="getinvolved.html">Get Involved</a>
+                <a href="contactpage.html">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-    <h1>Khula-Nathi</h1>
-</header>
-
-<hr>
-
-<main>
-    <section class="gallery">
-        <!-- pictures for the gallery part -->
-
-        <img 
-            src="gallery.garden.webp" alt="Khula-Nathi community garden"
-        >
-
-        <img 
-            src="gallery.orphanage.jpg" alt="Khula-Nathi orphanage programme"
-        >
-
-            
-        <img 
-            src="gallery picture 3.webp" alt="Khula-Nathi gallery image three"
-        >
-
-        <img 
-            src="gallery-food donation.jpg" alt="Khula-Nathi gallery image four"
-        >
-
+    <!-- Hero / Header Section -->
+    <section class="hero-section">
+        <div class="hero-container" style="grid-template-columns: 1fr; text-align: center;">
+            <div class="hero-content">
+                <h1>OUR GALLERY</h1>
+                <div class="hero-subtitle">"Moments of Impact"</div>
+                <p>A glimpse into our community gardens, school feeding initiatives, and food donation programs.</p>
+            </div>
+        </div>
     </section>
-</main>
 
-<!-- FOOTER -->
+    <!-- Gallery Grid Section -->
+    <main class="gallery-wrapper">
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="gallery.garden.webp" alt="Khula-Nathi Community Garden">
+            </div>
 
+            <div class="gallery-card">
+                <img src="gallery.orphanage.jpg" alt="Khula-Nathi School Feeding">
+            </div>
 
-</body> </html>
+            <div class="gallery-card">
+                <img src="gallery picture 3.webp" alt="Khula-Nathi Fresh Produce Harvest">
+            </div>
+
+            <div class="gallery-card">
+                <img src="gallery-food donation.jpg" alt="Khula-Nathi Food Donation Box">
+            </div>
+        </div>
+    </main>
+
+    <!-- Growing Together Banner -->
+    <section class="growing-together">
+        <h2>GROWING TOGETHER</h2>
+        <p>Helping families • Supporting schools • Building stronger communities</p>
     </section>
-</main>
 
-<footer>
-    <p>Contact Us: 012 345 6789</p>
-    <p>
-        <a href="mailto:Khula-Nathi@gmail.com">
-            Khula-Nathi@gmail.com
-        </a>
-    </p>
-</footer>
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <h3>Contact Us</h3>
+        <p>012 345 6789</p>
+        <p><a href="mailto:Khula-Nathi@gmail.com">Khula-Nathi@gmail.com</a></p>
+    </footer>
 
 </body>
 </html>
