@@ -1,0 +1,261 @@
+/* ==========================================================================
+   KHULA-NATHI - CUSTOM DESIGN SYSTEM
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Scheme as Requested */
+  --dark-green: #2F6B3F;    /* Navigation, buttons, footer */
+  --medium-green: #5C8D4E;  /* Highlights & subheadings */
+  --light-green: #E3F0DF;   /* Hero section background */
+  --cream: #F5F7F2;         /* Main page background */
+  --white: #FFFFFF;         /* Programme cards */
+  --dark-grey: #333333;     /* Normal body text */
+
+  /* Typography & Layout */
+  --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --radius: 12px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 20px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--cream);
+  color: var(--dark-grey);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+/* ==========================================================================
+   1. NAVIGATION BAR
+   ========================================================================== */
+.site-header {
+  background-color: var(--dark-green);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--light-green);
+}
+
+/* Button Component */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--dark-green);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--medium-green);
+}
+
+/* ==========================================================================
+   2. HERO SECTION (Light Green Background)
+   ========================================================================== */
+.hero-section {
+  background-color: var(--light-green);
+  padding: 4rem 2rem;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  color: var(--dark-green);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  font-size: 1.35rem;
+  color: var(--medium-green);
+  font-weight: 700;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  color: var(--dark-grey);
+  margin-bottom: 1.75rem;
+}
+
+.hero-image-box {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.hero-image-box img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 4px);
+  display: block;
+}
+
+/* ==========================================================================
+   3. OUR PROGRAMMES (White Cards)
+   ========================================================================== */
+.programmes-section {
+  max-width: 1200px;
+  margin: 4.5rem auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.25rem;
+  color: var(--dark-green);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+}
+
+.programmes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.programme-card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.programme-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.programme-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.card-body h3 {
+  font-size: 1.35rem;
+  color: var(--dark-green);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   4. GROWING TOGETHER SECTION
+   ========================================================================== */
+.growing-together {
+  background-color: var(--light-green);
+  padding: 3.5rem 2rem;
+  text-align: center;
+}
+
+.growing-together h2 {
+  font-size: 2rem;
+  color: var(--dark-green);
+  margin-bottom: 0.75rem;
+}
+
+.growing-together p {
+  font-size: 1.2rem;
+  color: var(--medium-green);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   5. FOOTER (Dark Green)
+   ========================================================================== */
+.site-footer {
+  background-color: var(--dark-green);
+  color: var(--white);
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.site-footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer p {
+  font-size: 1.05rem;
+  margin: 0.25rem 0;
+}
+
+.site-footer a {
+  color: var(--light-green);
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}

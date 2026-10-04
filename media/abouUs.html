@@ -4,54 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khula-Nathi - About Us</title>
-    <style>
-        nav a {
-            margin-right: 25px;
-            font-size: 18px;
-            text-decoration: none;
-        }
-        img {
-            max-width: 50%;
-            height: auto;
-        }
-    </style>
+    <!-- Relative path from media/ folder to CSS/ folder -->
+    <link rel="stylesheet" href="../CSS/khula-nathi.css">
 </head>
 <body>
 
-    <nav>
-        <a><a></a> <a href="homepage.html">Home</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="abouUs.html">About Us</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="gallery.html">Gallery</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="getinvolved.html">Get Involved</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="contactpage.html">Contact us</a>
-    </nav>
-    <header>
-        <h1>Khula-Nathi</h1>
-        <img src="Khula.png"  alt="About Khula-Nathi placeholder image">
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="brand-logo">KHULA-NATHI</div>
+            <nav class="nav-links">
+                <a href="homepage.html">Home</a>
+                <a href="abouUs.html" class="active">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="getinvolved.html">Get Involved</a>
+                <a href="contactpage.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>Our Mission and Vision</h2>
-            <p>
-                Our mission is to empower underserved communities through education 
-                and sustainable development initiatives. We envision a future where every 
-                individual has equal access to opportunities for growth and prosperity
-            </p>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>About Khula-Nathi</h1>
+                <div class="hero-subtitle">"Grow with Us"</div>
+                <p>Empowering underserved communities through sustainable food, gardens, and community support.</p>
+            </div>
+            <div class="hero-image-box">
+                <img src="Khula.png" alt="About Khula-Nathi Logo">
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>What We Do:</h2>
-            <p>
-              Khula-Nathi grows and shares fresh, healthy food with families who cannot
-               afford enough to eat and supports local schools in feeding their learners, 
-               building a stronger ,more food secure community through gardening ,donation and volunteer effort
-            </p>
-        </section>
+    <!-- Main Content Sections -->
+    <main class="programmes-section">
+        <div class="programmes-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+            
+            <article class="programme-card">
+                <div class="card-body" style="text-align: left; padding: 2rem;">
+                    <h2 style="color: var(--dark-green); margin-bottom: 1rem;">Our Mission & Vision</h2>
+                    <p style="color: var(--dark-grey); font-size: 1.05rem; line-height: 1.7;">
+                        Our mission is to empower underserved communities through education 
+                        and sustainable development initiatives. We envision a future where every 
+                        individual has equal access to opportunities for growth and prosperity.
+                    </p>
+                </div>
+            </article>
 
+            <article class="programme-card">
+                <div class="card-body" style="text-align: left; padding: 2rem;">
+                    <h2 style="color: var(--dark-green); margin-bottom: 1rem;">What We Do</h2>
+                    <p style="color: var(--dark-grey); font-size: 1.05rem; line-height: 1.7;">
+                        Khula-Nathi grows and shares fresh, healthy food with families who cannot
+                        afford enough to eat and supports local schools in feeding their learners, 
+                        building a stronger, more food-secure community through gardening, donations, 
+                        and volunteer efforts.
+                    </p>
+                </div>
+            </article>
+
+        </div>
     </main>
-    <footer>
-        <p>Contact Us: 012 345 6789 </p>
+
+    <!-- Growing Together Banner -->
+    <section class="growing-together">
+        <h2>GROWING TOGETHER</h2>
+        <p>Helping families • Supporting schools • Building stronger communities</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <h3>Contact Us</h3>
+        <p>012 345 6789</p>
         <p><a href="mailto:Khula-Nathi@gmail.com">Khula-Nathi@gmail.com</a></p>
     </footer>
 

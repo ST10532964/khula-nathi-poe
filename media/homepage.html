@@ -1,73 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khula-Nathi - Home</title>
-    <style>
-        
-        nav a {
-            margin-right: 25px;
-            font-size: 18px;
-            text-decoration: none;
-        }
-        img {
-            max-width: 50%;
-            height: auto;
-        }
-    </style>
+    <title>Khula-Nathi | Home</title>
+    <!-- Relative path from media/ folder to CSS/ folder -->
+    <link rel="stylesheet" href="../CSS/khula-nathi.css">
 </head>
 <body>
-    </footer>
- 
- <nav>
-        <a><a></a><a href="homepage.html">Home</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="abouUs.html">About Us</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="gallery.html">Gallery</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="getinvolved.html">Get Involved</a><a></a><a></a><a></a><a></a><a></a><a></a>
-        <a href="contactpage.html">Contact us</a>
-    </nav>
-    </footer> 
 
-<header>
-        <h1>Khula-Nathi - 'Grow with Us'</h1>
-        <img src="Khula.png" alt ="Khula-Natthi Logo">
-</header>
+    <!-- Top Navigation Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="brand-logo">KHULA-NATHI</div>
+            <nav class="nav-links">
+                <a href="homepage.html" class="active">Home</a>
+                <a href="abouUs.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="getinvolved.html">Get Involved</a>
+                <a href="contactpage.html">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<hr>
-
-<main>
-        <h2 style="text-align:center;">OUR PROGRAMMES</h2>
-
-
-<section>
-            <figure>
-                <figcaption> School Feeding</figcaption>
-                <img src="gallery.garden.webp"
-                alt="School Feeding"
-            </figure>
-            <figure>
-                <figcaption> Community Gardens</figcaption>
-                <img src="community garden.avif" alt="Community Gardens"
-                >
-            </figure>
-          <figure> <figcaption>Orhanage help</figcaption> 
-            <img src="oraphanage help.webp"alt="Orphanage Help">
-          </figure>
-        
-        </section>
-
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>KHULA-NATHI</h1>
+                <div class="hero-subtitle">"Grow with Us"</div>
+                <p>Growing communities through food, gardens and support.</p>
+                <a href="getinvolved.html" class="btn btn-primary">Get Involved</a>
+            </div>
+            <div class="hero-image-box">
+                <img src="Khula.png" alt="Khula Image">
+            </div>
+        </div>
     </section>
-    
 
-<footer>
+    <!-- Our Programmes Section -->
+    <main class="programmes-section">
+        <h2 class="section-title">OUR PROGRAMMES</h2>
 
-    <p>Contact Us: 012 345 6789</p>
-    <p>
-        <a href="mailto:Khula-Nathi@gmail.com">
-            Khula-Nathi@gmail.com
-        </a>
-    </p>
-</footer>
+        <div class="programmes-grid">
+            <article class="programme-card">
+                <img src="gallery.garden.webp" alt="School Feeding">
+                <div class="card-body">
+                    <h3>School Feeding</h3>
+                </div>
+            </article>
 
-</body> </html>
+            <article class="programme-card">
+                <img src="community garden.avif" alt="Community Gardens">
+                <div class="card-body">
+                    <h3>Community Gardens</h3>
+                </div>
+            </article>
+
+            <article class="programme-card">
+                <img src="oraphanage help.webp" alt="Orphanage Help">
+                <div class="card-body">
+                    <h3>Orphanage Help</h3>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Growing Together Banner -->
+    <section class="growing-together">
+        <h2>GROWING TOGETHER</h2>
+        <p>Helping families • Supporting schools • Building stronger communities</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <h3>Contact Us</h3>
+        <p>012 345 6789</p>
+        <p><a href="mailto:Khula-Nathi@gmail.com">Khula-Nathi@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>
