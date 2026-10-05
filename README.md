@@ -44,7 +44,7 @@ The workflow ensures that my project is automatically built and tested every tim
  <img width="975" height="391" alt="image" src="https://github.com/user-attachments/assets/ec66c7ae-0e8f-4d21-8a23-77f9bf107df6" />
 
   
-*Caption for screenshot 2:Shows the about us page that explains what Khula-Nathi is and its mission as vision.*
+	*Caption for screenshot 2:Shows the about us page that explains what Khula-Nathi is and its mission as vision.*
 
 <img width="975" height="408" alt="image" src="https://github.com/user-attachments/assets/0b4741f5-c566-41d0-97a1-fd263d391dbf" />
 
@@ -52,15 +52,15 @@ The workflow ensures that my project is automatically built and tested every tim
  <img width="975" height="446" alt="image" src="https://github.com/user-attachments/assets/28e4416b-cc8a-4a0a-8189-464c5bf5c383" />
  <img width="975" height="316" alt="image" src="https://github.com/user-attachments/assets/a357324d-5848-4651-b0dd-e08a6999dbca" />
 
-*Caption for screenshot 4:Shows the users different ways of how they can get involved and help, the user can simply move to the contact page by clicking one of the options given. *
+	*Caption for screenshot 4:Shows the users different ways of how they can get involved and help, the user can simply move to the contact page by clicking one of the options given. *
 
 <img width="975" height="521" alt="image" src="https://github.com/user-attachments/assets/2cc2dba2-97ba-4559-a1dc-d154cc876f2e" />
 
- *Caption for screenshot 5: This is where the user engages and enters their details and mention how they can help. It gives the user errors if they leave any blank spaces or when they do not fill in all the details. *
+ 	*Caption for screenshot 5: This is where the user engages and enters their details and mention how they can help. It gives the user errors if they leave any blank spaces or when they do not fill in all the details. *
 
  <img width="975" height="253" alt="image" src="https://github.com/user-attachments/assets/4b2ecc28-fef8-47f8-b4e4-e61a6fa20f96" />
 
-*Caption for screenshot 6:Shows the footer the user will find  at the bottom of the slides and it shows the contact number and email. *
+	*Caption for screenshot 6:Shows the footer the user will find  at the bottom of the slides and it shows the contact number and email. *
 
 
 ---
