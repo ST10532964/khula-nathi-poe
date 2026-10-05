@@ -34,25 +34,33 @@ The workflow ensures that my project is automatically built and tested every tim
 
 ## Screenshots
 ### Website Screenshots:
+<img width="975" height="404" alt="image" src="https://github.com/user-attachments/assets/b7545f0a-5cc1-4b25-a68b-c25964768a18" />
+<img width="975" height="367" alt="image" src="https://github.com/user-attachments/assets/6dcd7acb-27af-41fd-979f-a1796831bdfb" />
+
      *Caption for screenshot 1: The home screen of the of the website that welcomes the visitor.*
 
 
-   
+ <img width="975" height="391" alt="image" src="https://github.com/user-attachments/assets/625baebe-7449-491b-860b-04de410005df" />
+ <img width="975" height="391" alt="image" src="https://github.com/user-attachments/assets/ec66c7ae-0e8f-4d21-8a23-77f9bf107df6" />
+
+  
 *Caption for screenshot 2:Shows the about us page that explains what Khula-Nathi is and its mission as vision.*
 
+<img width="975" height="408" alt="image" src="https://github.com/user-attachments/assets/0b4741f5-c566-41d0-97a1-fd263d391dbf" />
+
  *Caption for screenshot 3:Shows the gallery page.*
-  
+ <img width="975" height="446" alt="image" src="https://github.com/user-attachments/assets/28e4416b-cc8a-4a0a-8189-464c5bf5c383" />
+ <img width="975" height="316" alt="image" src="https://github.com/user-attachments/assets/a357324d-5848-4651-b0dd-e08a6999dbca" />
+
 *Caption for screenshot 4:Shows the users different ways of how they can get involved and help, the user can simply move to the contact page by clicking one of the options given. *
+
+<img width="975" height="521" alt="image" src="https://github.com/user-attachments/assets/2cc2dba2-97ba-4559-a1dc-d154cc876f2e" />
+
  *Caption for screenshot 5: This is where the user engages and enters their details and mention how they can help. It gives the user errors if they leave any blank spaces or when they do not fill in all the details. *
- 
+
+ <img width="975" height="253" alt="image" src="https://github.com/user-attachments/assets/4b2ecc28-fef8-47f8-b4e4-e61a6fa20f96" />
+
 *Caption for screenshot 6:Shows the footer the user will find  at the bottom of the slides and it shows the contact number and email. *
-
-
-
-
-
-
-
 
 
 ---
@@ -76,18 +84,23 @@ While the current version of the app provides the core functionality, there are 
 ---
 ## List of Figures
 -	**Figure 1**:
--<img width="645" height="1177" alt="image" src="https://github.com/user-attachments/assets/85c823ec-a487-4087-9c85-f1b7178a916f" />
+<img width="975" height="404" alt="image" src="https://github.com/user-attachments/assets/4c007ac6-d46b-4d2b-a9ef-3d8c8ad86ebd" />
+<img width="975" height="367" alt="image" src="https://github.com/user-attachments/assets/a203557b-2a61-40bd-819c-cd1e8569272e" />
+
 -	 Screenshot of the app's home screen.
 -	**Figure 2**:
--<img width="631" height="1178" alt="image" src="https://github.com/user-attachments/assets/c7a6f2ca-5e97-4f03-b549-71dba137734d" />
----Shows output once the user has entered the input and pressed the ‘Get My social Spark’ button
- 	**Figure 3**:
- 	<img width="644" height="1175" alt="image" src="https://github.com/user-attachments/assets/dc338447-638f-40f9-b178-7e60f892becc" />
-   Screen when the user has not entered an input
- **Figure 4**:
- <img width="644" height="1177" alt="image" src="https://github.com/user-attachments/assets/4aa4546f-2b0f-4b7b-a622-bce25e80c797" />
- Screen when the user has entered an invalid input 
+<img width="975" height="367" alt="image" src="https://github.com/user-attachments/assets/be130377-e129-40ed-ba15-fbc8c5906663" />
+<img width="975" height="391" alt="image" src="https://github.com/user-attachments/assets/813137b9-f951-4d05-aebd-695e1c36dfd0" />
 
+---Shows the about us page.
+ 	**Figure 3**:
+ 	<img width="975" height="408" alt="image" src="https://github.com/user-attachments/assets/f3dfec09-a3f4-45dd-b86d-0201f4a6617a" />
+
+Shows the gallery page
+**Figure 4**:
+ <img width="975" height="446" alt="image" src="https://github.com/user-attachments/assets/b1e998f2-21a9-40e7-9609-434f119f5059" />
+
+Shows the get involved page.
 
 
 
