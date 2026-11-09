@@ -5,7 +5,7 @@
 -	**Course**: WEDE5020
 -	**Subject**: Web Development
 ## Links
--	**GitHub Repository**:  https://github.com/EMGPSD/wede5020-2026-part-2-st10532964.git 
+-	**GitHub Repository**: https://github.com/EMGPSD/wede5020-2026-part-3-st10532964.git
 ## Project Overview
 **Khula-Nathi** is a web platform designed to empower local community initiatives, sustainable development projects, and food donation programs. Built with a custom, lightweight design system, the platform provides an intuitive and accessible interface for community members, volunteers, and donors to explore programs, view project galleries, and get involved.
 --## Purpose and Features
@@ -79,7 +79,7 @@ While the current version of the app provides the core functionality, there are 
 1.	**Feature 1**: The features I would add are more buttons.
 ---
 ## References
-1. https://github.com/EMGPSD/wede5020-2026-part-2-st10532964.git 
+1. https://github.com/EMGPSD/wede5020-2026-part-3-st10532964.git
 
 ---
 ## List of Figures
