@@ -1,16 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Security: Content Security Policy to prevent XSS attacks -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://unpkg.com https://*.openstreetmap.org; style-src 'self' 'unsafe-inline' https://unpkg.com; script-src 'self' 'unsafe-inline' https://unpkg.com;">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags for part 3 of the assignment -->
-    <title>Khula-Nathi - Community Gardens & Food Donations</title>
+    <title>Khula-Nathi - Contact Us & Location</title>
     <meta name="description" content="Khula-Nathi is a non-profit organization supporting local families and schools through sustainable community gardens and food donation programs.">
     <meta name="keywords" content="Khula-Nathi, non-profit, food donations, community garden, school feeding, South Africa">
     <meta name="author" content="Katleho Radebe">
 
     <link rel="stylesheet" href="../CSS/khula-nathi.css">
+
+    <!-- Leaflet.js CSS for Interactive Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+
+    <style>
+        .location-section {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .location-details {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: var(--dark-grey);
+        }
+
+        /* Map Container Styling */
+        #map {
+            width: 100%;
+            height: 380px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--dark-green);
+            margin-top: 1rem;
+        }
+
+        .success-alert {
+            background-color: var(--light-green);
+            color: var(--dark-green);
+            border: 1px solid var(--medium-green);
+            padding: 1rem;
+            border-radius: var(--radius);
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .form-instruction-banner {
+            background-color: var(--white);
+            border-left: 4px solid var(--medium-green);
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -18,7 +68,7 @@
     <header class="site-header">
         <div class="nav-container">
             <div class="brand-logo">KHULA-NATHI</div>
-            <nav class="nav-links">
+            <nav class="nav-links" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="abouUs.html">About</a>
                 <a href="gallery.html">Gallery</a>
@@ -28,7 +78,7 @@
         </div>
     </header>
 
-    <!-- Contact Form Container -->
+    <!-- Contact Form for the user to fill in thier details -->
     <main class="contact-section">
         <h1>Contact Us</h1>
         <p class="contact-subtitle">
@@ -40,7 +90,7 @@
             <strong>Note:</strong> Please ensure that <strong>every field</strong> is correctly filled in before submitting your message.
         </div>
 
-        <!-- Success Message Popup (Hidden by Default) -->
+        <!-- Success Message Popup after the user sends the message -->
         <div id="successMessage" class="success-alert" style="display: none;">
             ✅ Saved successfully! Thank you for contacting Khula-Nathi.
         </div>
@@ -98,34 +148,60 @@
         </form>
     </main>
 
+    <!--  Location on the map  -->
+    <section class="location-section">
+        <h2>Find Our Workshop & Community Hub</h2>
+        <div class="location-details">
+            <p>📍 <strong>Address:</strong> Modderfontein Road (Near Greenstone Hill), Edenvale, Johannesburg</p>
+            <p>📞 <strong>Phone:</strong> 012 345 6789 | ✉️ <strong>Email:</strong> Khula-Nathi@gmail.com</p>
+        </div>
+
+        <!-- Leaflet Map Container -->
+        <div id="map"></div>
+    </section>
+
     <!-- Footer Section -->
     <footer class="site-footer">
         <p>Contact Us: 012 345 6789</p>
         <p><a href="mailto:Khula-Nathi@gmail.com">Khula-Nathi@gmail.com</a></p>
     </footer>
 
-    <!-- Form Validation Script -->
+    <!-- Leaflet JS Library -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+    <!-- Interactive Map & Form Script -->
     <script>
+        // Form Validation Script
         function handleFormSubmit(event) {
-            event.preventDefault(); // Prevents page reload
+            event.preventDefault();
             
             const form = document.getElementById('contactForm');
             const successAlert = document.getElementById('successMessage');
 
-            // Show "Saved successfully!" message
             successAlert.style.display = 'block';
-
-            // Scroll smoothly to success alert
             successAlert.scrollIntoView({ behavior: 'smooth' });
 
-            // Reset input fields after submission
             form.reset();
 
-            // Hide success message after 5 seconds
             setTimeout(() => {
                 successAlert.style.display = 'none';
             }, 5000);
         }
+
+        // Initialize Leaflet Map Centered Near Greenstone Mall, Edenvale (-26.1158, 28.1481)
+        document.addEventListener("DOMContentLoaded", function () {
+            const map = L.map('map').setView([-26.1158, 28.1481], 14);
+
+            // Load OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Custom Marker Popup for Khula-Nathi Hub
+            const marker = L.marker([-26.1158, 28.1481]).addTo(map);
+            marker.bindPopup("<b>Khula-Nathi Community Hub</b><br>Near Greenstone Hill, Edenvale").openPopup();
+        });
     </script>
 
 </body>

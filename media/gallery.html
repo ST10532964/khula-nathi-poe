@@ -1,16 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Security: Content Security Policy to prevent XSS attacks -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://unpkg.com https://*.openstreetmap.org; style-src 'self' 'unsafe-inline' https://unpkg.com; script-src 'self' 'unsafe-inline' https://unpkg.com;">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags for part 3 of the assignment -->
-    <title>Khula-Nathi - Community Gardens & Food Donations</title>
-    <meta name="description" content="Khula-Nathi is a non-profit organization supporting local families and schools through sustainable community gardens and food donation programs.">
-    <meta name="keywords" content="Khula-Nathi, non-profit, food donations, community garden, school feeding, South Africa">
+    <!-- SEO Meta Tags for Part 3 -->
+    <title>Khula-Nathi - Gallery & Impact Moments</title>
+    <meta name="description" content="Explore the Khula-Nathi gallery showcasing our community gardens, school feeding initiatives, and food donation programs in action.">
+    <meta name="keywords" content="Khula-Nathi, gallery, community gardens, school feeding, food donations, non-profit, South Africa">
     <meta name="author" content="Katleho Radebe">
 
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Khula-Nathi - Gallery & Impact Moments">
+    <meta property="og:description" content="A glimpse into our community gardens, school feeding initiatives, and food donation programs.">
+    <meta property="og:type" content="website">
+
+    <!-- External CSS Reference -->
     <link rel="stylesheet" href="../CSS/khula-nathi.css">
+    
+    <style>
+        /* Gallery Page Specific Styles & Lightbox */
+        .gallery-wrapper {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .search-filter-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .search-filter-container input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .search-filter-container input:focus {
+            outline: none;
+            border-color: var(--dark-green);
+            box-shadow: 0 0 0 3px rgba(47, 107, 63, 0.2);
+        }
+
+        #filterBar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: none;
+            background: #e0e0e0;
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .filter-btn.active {
+            background: var(--dark-green);
+            color: white;
+        }
+
+        .filter-btn:hover {
+            opacity: 0.9;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: calc(var(--radius) - 4px);
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .gallery-card p {
+            margin-top: 10px;
+            font-weight: 700;
+            color: var(--dark-green);
+        }
+
+        /* Lightbox Modal CSS */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 85%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            color: var(--white);
+            font-size: 45px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .close-lightbox:hover {
+            color: var(--light-green);
+        }
+    </style>
 </head>
 <body>
 
@@ -18,7 +164,7 @@
     <header class="site-header">
         <div class="nav-container">
             <div class="brand-logo">KHULA-NATHI</div>
-            <nav class="nav-links">
+            <nav class="nav-links" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="abouUs.html">About</a>
                 <a href="gallery.html" class="active">Gallery</a>
@@ -39,26 +185,48 @@
         </div>
     </section>
 
+    <!-- Search and Filter Bar -->
+    <div class="search-filter-container">
+        <input type="text" id="searchInput" placeholder="Search gallery items (e.g. garden, feeding, donation)...">
+        
+        <div id="filterBar">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="garden">Gardens</button>
+            <button class="filter-btn" data-category="feeding">Feeding</button>
+            <button class="filter-btn" data-category="donation">Donations</button>
+        </div>
+    </div>
+
     <!-- Gallery Grid Section -->
     <main class="gallery-wrapper">
         <div class="gallery-grid">
-            <div class="gallery-card">
+            <div class="gallery-card" data-category="garden" data-title="community garden">
                 <img src="gallery.garden.webp" alt="Khula-Nathi Community Garden">
+                <p>Community Garden</p>
             </div>
 
-            <div class="gallery-card">
+            <div class="gallery-card" data-category="feeding" data-title="school feeding">
                 <img src="gallery.orphanage.jpg" alt="Khula-Nathi School Feeding">
+                <p>School Feeding</p>
             </div>
 
-            <div class="gallery-card">
+            <div class="gallery-card" data-category="garden" data-title="fresh produce harvest">
                 <img src="gallery picture 3.webp" alt="Khula-Nathi Fresh Produce Harvest">
+                <p>Fresh Produce Harvest</p>
             </div>
 
-            <div class="gallery-card">
+            <div class="gallery-card" data-category="donation" data-title="food donation box">
                 <img src="gallery-food donation.jpg" alt="Khula-Nathi Food Donation Box">
+                <p>Food Donation Box</p>
             </div>
         </div>
     </main>
+
+    <!-- Lightbox Modal Structure -->
+    <div id="lightboxModal" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Enlarged gallery view">
+    </div>
 
     <!-- Growing Together Banner -->
     <section class="growing-together">
@@ -72,6 +240,72 @@
         <p>012 345 6789</p>
         <p><a href="mailto:Khula-Nathi@gmail.com">Khula-Nathi@gmail.com</a></p>
     </footer>
+
+    <!-- Interactive JavaScript (Lightbox, Filter & Search) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lightbox Elements
+            const modal = document.getElementById("lightboxModal");
+            const modalImg = document.getElementById("lightboxImg");
+            const closeBtn = document.querySelector(".close-lightbox");
+            const galleryImages = document.querySelectorAll(".gallery-card img");
+
+            galleryImages.forEach(img => {
+                img.addEventListener("click", function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeBtn.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener("click", function (e) {
+                if (e.target !== modalImg) {
+                    modal.style.display = "none";
+                }
+            });
+
+            // Search and Filter Elements
+            const searchInput = document.getElementById("searchInput");
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const galleryCards = document.querySelectorAll(".gallery-card");
+
+            // Category Filtering
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    filterButtons.forEach(btn => btn.classList.remove("active"));
+                    this.classList.add("active");
+
+                    const selectedCategory = this.getAttribute("data-category");
+
+                    galleryCards.forEach(card => {
+                        const cardCategory = card.getAttribute("data-category");
+                        if (selectedCategory === "all" || cardCategory === selectedCategory) {
+                            card.style.display = "block";
+                        } else {
+                            card.style.display = "none";
+                        }
+                    });
+                });
+            });
+
+            // Live Search Functionality
+            searchInput.addEventListener("input", function (e) {
+                const searchTerm = e.target.value.toLowerCase();
+
+                galleryCards.forEach(card => {
+                    const title = card.getAttribute("data-title").toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
